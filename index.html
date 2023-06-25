@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <html lang="es"></html>
+<head>
+    <title>Distance Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .invalid {
+            border-color: red;
+            box-shadow: 0 0 5px red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Calculate the distance between two points</h2>
+        <div class="form-group">
+            <label for="dimension">Dimension:</label>
+            <select class="form-control" id="dimension" onchange="toggleZInputs()">
+                <option value="2">2D</option>
+                <option value="3">3D</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>Point A:</label>
+            <input type="text" pattern="\d+(\.\d{1,2})?" id="x1" class="form-control" placeholder="X1" required>
+            <input type="text" pattern="\d+(\.\d{1,2})?" id="y1" class="form-control mt-2" placeholder="Y1" required>
+            <input type="text" pattern="\d+(\.\d{1,2})?" id="z1" class="form-control mt-2" style="display: none;" placeholder="Z1" required>
+        </div>
+
+        <div class="form-group">
+            <label>Point B:</label>
+            <input type="text" pattern="\d+(\.\d{1,2})?" id="x2" class="form-control" placeholder="X2" required>
+            <input type="text" pattern="\d+(\.\d{1,2})?" id="y2" class="form-control mt-2" placeholder="Y2" required>
+            <input type="text" pattern="\d+(\.\d{1,2})?" id="z2" class="form-control mt-2" style="display: none;" placeholder="Z2" required>
+        </div>
+
+        <button class="btn btn-primary" onclick="calculateDistance()">Calculate</button>
+
+        <h3 class="mt-4" id="result"></h3>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
